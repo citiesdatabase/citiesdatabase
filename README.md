@@ -8,3 +8,13 @@ We have two major product
 
 We have a free list of world countries in the repo. Feel free to use, distribute at will.
 We will continue to add and update the free data here for everyone. 
+
+Cities Database Product Information: https://www.worldcitiesdatabase.com/
+
+Postal Code Product Information: https://www.worldcitiesdatabase.com/zipcode-postal-code-database.aspx
+
+Zipcode Product Information: https://www.worldcitiesdatabase.com/zipcode-postal-code-database.aspx
+
+Online Demo of Cities Database: https://www.worldcitiesdatabase.com/free-online-cities-database-demo.aspx
+
+Online Demo of zipcode/postal code Database: https://www.worldcitiesdatabase.com/free-online-zipcode-database-demo.aspx
