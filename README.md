@@ -6,4 +6,5 @@ We have two major product
 - Cities Database : Includes country, city, state, latitude, longitude, timezone and dialing code for all countries of the world
 - Postal Code Database ( also known as zipcode database)
 
+We have a free list of world countries in the repo. Feel free to use, distribute at will.
 We will continue to add and update the free data here for everyone. 
