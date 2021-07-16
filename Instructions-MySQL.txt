@@ -1,0 +1,23 @@
+Schema SQL for cities database hosted at https://www.worldcitiesdatabase.com
+
+Step 1: Extract the zip. Note down the path of the extracted directory which will be used in step 4. Lets say this path is /mysql 
+which contains city.dat, states.dat and country.dat file. 
+
+Step 2: Create the tables using following sql statement:
+
+create table country(country_code varchar(2), country_code_iso3 varchar(3), country_name varchar(255), continent varchar(20), dialingPrefix varchar(20));
+create table states(country_code varchar(2),state_code varchar(20),state_name varchar(255));
+create table city (country_code varchar(2), state_code varchar(20),city_name varchar(255),city_name_ascii varchar(255), latitude float DEFAULT 0, longitude float DEFAULT 0,timezoneid  varchar(255));
+create table timezone(country_code varchar(2),timezoneid varchar(255), gmtoffset float, dstoffest float, rawoffset float);
+
+Step 3: Alter table definition to support utf8 using following command
+ALTER TABLE country CONVERT TO CHARACTER SET utf8 COLLATE utf8_persian_ci;
+ALTER TABLE states CONVERT TO CHARACTER SET utf8 COLLATE utf8_persian_ci;
+ALTER TABLE city CONVERT TO CHARACTER SET utf8 COLLATE utf8_persian_ci;
+ALTER TABLE timezone CONVERT TO CHARACTER SET utf8 COLLATE utf8_persian_ci;
+
+Step 4:
+LOAD DATA LOCAL INFILE '/mysql/country.dat' INTO TABLE country CHARACTER SET UTF8 fields terminated by '\t' LINES TERMINATED BY '\r\n'; 
+LOAD DATA LOCAL INFILE '/mysql/states.dat' INTO TABLE states CHARACTER SET UTF8 fields terminated by '\t' LINES TERMINATED BY '\r\n';
+LOAD DATA LOCAL INFILE '/mysql/city.dat' INTO TABLE city CHARACTER SET UTF8 fields terminated by '\t' LINES TERMINATED BY '\r\n'; 
+LOAD DATA LOCAL INFILE '/mysql/timezone.dat' INTO TABLE timezone CHARACTER SET UTF8 fields terminated by '\t' LINES TERMINATED BY '\r\n'; 
